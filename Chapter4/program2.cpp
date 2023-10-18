@@ -1,39 +1,27 @@
-// THis program display the Roman numeral version 
+// This program averages three test scores
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main()
-{   
-    int number; // To hold the number enter
+{
+    const int HIGH_SCORE = 95;  //A high score is 95 or greater
+    int score1, score2, score3; // To hold three test scores
+    double average;             // To hold the average score
 
-    cout << "Enter the number within the range of 1 through 10: ";
-    cin >> number;
+    // Get the three test scores.
+    cout << "Enter 3 test scores and i will average them: ";
+    cin >> score1 >> score2 >> score3;
 
-    // Display the Roman numeral version of the number
-    switch (number)
+    //Calculate and display the average score.
+    average = (score1 + score2 + score3) / 3.0;
+    cout << fixed << showpoint << setprecision(1);
+    cout << "Your average is " << average << endl;
+
+    // If the average is a high score, congratulate the user.
+    if (average > HIGH_SCORE)
     {
-        case 1: cout << "Roman numeral version of " << number << " is I.\n";
-        break;
-        case 2: cout << "Roman numeral version of " << number << " is II.\n";
-        break;
-        case 3: cout << "Roman numeral version of " << number << " is III.\n";
-        break;
-        case 4: cout << "Roman numeral version of " << number << " is IV.\n";
-        break;
-        case 5: cout << "Roman numeral version of " << number << " is V.\n";
-        break;
-        case 6: cout << "Roman numeral version of " << number << " is VI.\n";
-        break;
-        case 7: cout << "Roman numeral version of " << number << " is VII.\n";
-        break;
-        case 8: cout << "Roman numeral version of " << number << " is VIII.\n";
-        break;
-        case 9: cout << "Roman numeral version of " << number << " is IX.\n";
-        break;
-        case 10: cout << "Roman numeral version of " << number << " is X.\n";
-        break;
-        default: cout << "You enter the number that out of range.\nPlease run program again.";
-        break;
-    }
+        cout << "Congratulations! That's a high score!\n";
+    } 
     return 0;
 }

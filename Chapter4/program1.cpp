@@ -1,30 +1,16 @@
-// This program determine the number which is the smaller and which is the larger.
+//This program displays the values of the true and false states
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    float num1,num2;    // To hold the numbers
+    bool trueValue, falseValue;
+    int x = 5, y = 10;
 
-    cout << "Enter the first number: ";
-    cin >> num1;
-    cout << "Enter the second number: ";
-    cin >> num2;
+    trueValue = x < y;
+    falseValue = y == x;
 
-    // display the numbers which larger or smaller
-    if (num1 > num2)
-    {
-        cout << "The number: " << num1 << " is larger\n";
-        cout << "The number: " << num2 << " is smaller\n";
-    }
-    else if (num1 < num2)
-    {
-        cout << "The number: " << num2 << " is smaller\n";
-         cout << "The number: " << num1 << " is larger\n";
-    }
-    else
-    {
-        cout << "these numbers are equal";
-    }
+    cout << "True is " << trueValue << endl;
+    cout << "False is " << falseValue << endl;
     return 0;
 }

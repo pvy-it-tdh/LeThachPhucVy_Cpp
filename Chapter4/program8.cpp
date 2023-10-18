@@ -1,41 +1,23 @@
+// This program uses the modulus operator to determine
+// if a number is odd or even. If the number is evenly divisble
+// by 2, it is an even. A remainder indicates it is odd.
 #include <iostream>
-#include <string>
 using namespace std;
 
-int main() 
+int main()
 {
-    // Declare variables for primary colors and the resulting secondary color
-    string color1, color2, secondaryColor;
+    int number;
 
-    // Prompt the user to enter the first primary color
-    cout << "Enter the first primary color (red, blue, or yellow): ";
-    cin >> color1;
-
-    // Prompt the user to enter the second primary color
-    cout << "Enter the second primary color (red, blue, or yellow): ";
-    cin >> color2;
-
-    // Check the combinations of primary colors and calculate the resulting secondary color
-    if ((color1 == "red" && color2 == "blue") || (color1 == "blue" && color2 == "red")) 
+    cout << "Enter an integer and i will tell you if it\n";
+    cout << "is odd or even. ";
+    cin >> number;
+    if (number % 2 == 0)
     {
-        secondaryColor = "purple";
-    } 
-    else if ((color1 == "red" && color2 == "yellow") || (color1 == "yellow" && color2 == "red"))
-     {
-        secondaryColor = "orange";
-    } 
-    else if ((color1 == "blue" && color2 == "yellow") || (color1 == "yellow" && color2 == "blue")) 
-    {
-        secondaryColor = "green";
-    } 
-    else 
-    {
-        cout << "Error: Invalid color combination. Please enter red, blue, or yellow." << endl;
-        return 1; // Exit the program with an error code
+        cout << number << " is even.\n";
     }
-
-    // Display the resulting secondary color
-    cout << "The resulting secondary color is: " << secondaryColor << endl;
-
+    else
+    {
+        cout << number << " is odd.\n";
+    }
     return 0;
 }

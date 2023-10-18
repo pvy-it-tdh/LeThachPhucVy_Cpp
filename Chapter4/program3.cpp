@@ -1,26 +1,16 @@
+// This program demonstrates how a misplaced semicolon
+//prematurely terminates an if statement.
 #include <iostream>
 using namespace std;
 
-int main() {
-    // Declare variables for month, day, and two-digit year
-    int month, day, year;
+int main()
+{
+    int x = 0, y = 10;
 
-    // Ask the user to enter the month, day, and two-digit year
-    cout << "Enter the month (numeric form): ";
-    cin >> month;
-
-    cout << "Enter the day: ";
-    cin >> day;
-
-    cout << "Enter the two-digit year: ";
-    cin >> year;
-
-    // Check if the date is magic
-    if (month * day == year) {
-        cout << "The date is magic!" << endl;
-    } else {
-        cout << "The date is not magic." << endl;
+    cout << "x is " << x << " and y is " << y << endl;
+    if (x > y); // Error! Misplaced semicolon
+    {
+        cout << "x is greater than y\n"; //This is always executed.
     }
-
     return 0;
 }

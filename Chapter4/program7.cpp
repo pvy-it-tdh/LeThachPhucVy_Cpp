@@ -1,37 +1,28 @@
+// This program averages 3 test scores. The braces
+//were inadverently left out of the if statement.
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
-int main() {
-    // Constants for seconds per minute, hour, and day
-    const int SECONDS_PER_MINUTE = 60;
-    const int SECONDS_PER_HOUR = 3600;
-    const int SECONDS_PER_DAY = 86400;
+int main()
+{
+    const int HIGH_SCORE = 95;      // A high score is 95 or greater
+    int score1, score2, score3; // To hold three test scores
+    double average;             // To hold the average score
 
-    // Declare variables for seconds, minutes, hours, and days
-    int seconds, minutes, hours, days;
+    // Get the three scores.
+    cout << "Enter 3 test scores and i will average them: ";
+    cin >> score1 >> score2 >> score3;
 
-    // Ask the user to enter a number of seconds
-    cout << "Enter a number of seconds: ";
-    cin >> seconds;
+    // Calculate and display the average score.
+    average = (score1 + score2 + score3 )/ 3.0;
+    cout << fixed << showpoint << setprecision(1);
+    cout << "Your average is " << average << endl;
 
-    // Calculate the number of minutes, hours, and days
-    minutes = seconds / SECONDS_PER_MINUTE;
-    hours = seconds / SECONDS_PER_HOUR;
-    days = seconds / SECONDS_PER_DAY;
-
-    // Display the results
-    if (days >= 1) 
-    {
-        cout << "Equivalent days: " << days << endl;
-    }
-    if (hours >= 1) 
-    {
-        cout << "Equivalent hours: " << hours << endl;
-    }
-    if (minutes >= 1) 
-    {
-        cout << "Equivalent minutes: " << minutes << endl;
-    }
-
+    //ERROR! This if statment is missing its braces;
+    if ( average > HIGH_SCORE)
+        cout << "Congratulations!\n";
+        cout << " That's a high score.\n";
+        cout << "You deserve a pat on the back!\n";
     return 0;
 }

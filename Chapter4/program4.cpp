@@ -1,36 +1,21 @@
+// This program demonstrates how floating-point
+//round-off errors can make equality operations unreliable.
 #include <iostream>
 using namespace std;
 
-int main() {
-    // Declare variables for the length and width of two rectangles
-    double length1, width1, length2, width2;
+int main()
+{
+    double a = 1.5;      //a is 1.5.
+    double b = 1.5;      //b is 1.5.
 
-    // Ask the user to enter the length and width of the first rectangle
-    cout << "Enter the length of the first rectangle: ";
-    cin >> length1;
-
-    cout << "Enter the width of the first rectangle: ";
-    cin >> width1;
-
-    // Ask the user to enter the length and width of the second rectangle
-    cout << "Enter the length of the second rectangle: ";
-    cin >> length2;
-
-    cout << "Enter the width of the second rectangle: ";
-    cin >> width2;
-
-    // Calculate the areas of the two rectangles
-    double area1 = length1 * width1;
-    double area2 = length2 * width2;
-
-    // Compare the areas and display the result
-    if (area1 > area2) {
-        cout << "The first rectangle has a greater area." << endl;
-    } else if (area1 < area2) {
-        cout << "The second rectangle has a greater area." << endl;
-    } else {
-        cout << "Both rectangles have the same area." << endl;
+    a += 0.0000000000000001; // Add a little to a
+    if ( a ==b )
+    {
+        cout << "Both a and b are the same.\n";
     }
-
+    else
+    {
+        cout << "a and b are not the same.\n";
+    }
     return 0;
 }

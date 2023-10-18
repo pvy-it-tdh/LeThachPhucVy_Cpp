@@ -1,47 +1,34 @@
+// This program asks the user for two numbers, num1 and num2.
+// num1 is divided by num2 and the result is displayed.
+// Before the division operation, however, num2 is tested
+// for the value 0. If it contains 0, the division does not take place.
 #include <iostream>
 using namespace std;
 
-int main() {
-    // Constants for coin values in cents
-    const int PENNY_VALUE = 1;
-    const int NICKEL_VALUE = 5;
-    const int DIME_VALUE = 10;
-    const int QUARTER_VALUE = 25;
-    const int DOLLAR_VALUE = 100; // One dollar equals 100 cents
+int main()
+{
+    double num1, num2, quotient;
 
-    // Declare variables for the number of each type of coin
-    int pennies, nickels, dimes, quarters;
+    // Get the first number.
+    cout << "Enter a number: ";
+    cin >> num1;
 
-    // Ask the user to enter the number of each type of coin
-    cout << "Enter the number of pennies: ";
-    cin >> pennies;
+    // Get the second number.
+    cout << "Enter another number: ";
+    cin >> num2;
 
-    cout << "Enter the number of nickels: ";
-    cin >> nickels;
-
-    cout << "Enter the number of dimes: ";
-    cin >> dimes;
-
-    cout << "Enter the number of quarters: ";
-    cin >> quarters;
-
-    // Calculate the total value of the coins entered in cents
-    int totalCents = (pennies * PENNY_VALUE) + (nickels * NICKEL_VALUE) +
-                     (dimes * DIME_VALUE) + (quarters * QUARTER_VALUE);
-
-    // Check if the total value equals one dollar
-    if (totalCents == DOLLAR_VALUE) 
+    // If num2 is not zero, perform the division.
+    if (num2 == 0)
     {
-        cout << "Congratulations! You won the game. You made exactly one dollar!" << endl;
-    } 
-    else if (totalCents < DOLLAR_VALUE) 
-    {
-        cout << "Sorry, you entered less than one dollar." << endl;
-    } 
-    else 
-    {
-        cout << "Sorry, you entered more than one dollar." << endl;
+        cout << "Division by zero is not possible.\n";
+        cout << "Please run the program again and enter\n";
+        cout << "a number other than zero.\n";
     }
-
+    else
+    {
+        quotient = num1 / num2;
+        cout << "The quotient of " << num1 << " divided by ";
+        cout << num2 << " is " << quotient << ".\n";
+    }
     return 0;
 }
