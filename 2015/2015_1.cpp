@@ -11,7 +11,7 @@ public:
         this->bigNum = "";
     }
 
-    BigInteger(string s) {
+    BigInteger(string s) { // loai bo dau cach 
         for (int i = 0; i < s.size(); i++) {
             if (s[i] == ' ') {
                 for (int j = i; j < s.size(); j++) {
