@@ -24,7 +24,7 @@ public:
     }
 
     PhanSo operator+(const PhanSo& ps) {
-        PhanSo newPhanSo(this->tu * ps.mau + this->mau * ps.tu, this->mau * ps.mau);
+        PhanSo newPhanSo(this->tu * ps.mau + this->mau * ps.tu, this->mau * ps.mau);// a/b +c/d= a*d+c*b/bd
         return newPhanSo;
     }
 
@@ -35,12 +35,12 @@ public:
     }
 
     PhanSo operator+(const int& iNum) {
-        PhanSo newPhanSo(this->tu + iNum * this->mau, this->mau);
+        PhanSo newPhanSo(this->* this->mau, thitu + iNum s->mau);
         return newPhanSo;
     }
 
     PhanSo operator++() {
-        this->tu += this->mau;
+        this->tu += this->mau; // a/b +1 = a+b/b
         return *this;
     }
 

@@ -47,7 +47,7 @@ double DeriveSum(Function *f,Function *g,double x)
 double DaoHamThuong(Function *f,Function *g, double x)
 {
     if (g!=NULL)
-    {
+    {// f/g =f'*g-g'*f/g^2
         return (f->Derive(x)*g->Value(x)-f->Value(x)*g->Derive(x))/(g->Derive(x)*g->Derive(x));
     }
     return 0;
@@ -56,7 +56,7 @@ double DaoHamCuaHamHop(Function *f,Function *g,double x)
 {
     if(f!= NULL&& g!=NULL)
     {
-        return f->Derive(g->Value(x))*g->Derive(x);
+        return f->Derive(g->Value(x))*g->Derive(x);// f(g(x))'=g(x)'*f(g(x))'
 
     }
     return 0;

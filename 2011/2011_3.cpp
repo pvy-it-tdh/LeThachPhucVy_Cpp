@@ -102,7 +102,7 @@ int main() {
    {
     MayXucTac a;
     a.nhap();
-    chiphixuctac=chiphixuctac+a.tinhChiPhi();
+    chiphixuctac=chiphixuctac+a.tinhChiPhi();// chiphixuctac+=a.tinhChiPhi();
     luong_nuoc_xuc_tac=luong_nuoc_xuc_tac+a.tinhLuongNuoc();
    }
    for (int i = 1; i <=m; i++)

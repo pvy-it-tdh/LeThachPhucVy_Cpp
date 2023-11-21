@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<fstream>
 using namespace std;
 
 // bảng thống kê viện phí từng bệnh nhân
@@ -8,23 +9,27 @@ using namespace std;
 class BenhNhan{
     protected:
         int MSBN;
+        string hoatdong;
     public:
         virtual void nhap()
         {
-            cout << "Nhap ma so benh nhan ";
+            cout << "Nhap ma so benh nhan " << endl;
             cin >> this->MSBN;
+            cout << "Nhap hoat dong cua benh nhan  ";
+            cin >> this->hoatdong;      
         }
         virtual bool TrangThai()
         {
             return true;
-        }
+        } 
         virtual  long TinhTien()
         {
             return 0;
         }
         virtual void xuat()
         {
-            cout << "Ma so benh nhan la "<< this->MSBN;
+            cout << "Ma so benh nhan la "<< this->MSBN<< endl;
+            cout << hoatdong<< endl;
             
         }
 };
@@ -48,6 +53,7 @@ class BenhNhanNgoaiTru: public BenhNhan
         {
             BenhNhan::xuat();
             cout << "Vien phi la "<<VienPhi;
+            
         }
 };
 class BenhNhanNoiTru:public BenhNhan{
@@ -63,10 +69,12 @@ class BenhNhanNoiTru:public BenhNhan{
         void nhap()
         {
             BenhNhan::nhap();
-            cout <<"Nhap phi kham benh moi ngay ";
+            cout <<"Nhap phi kham benh moi ngay " << endl;
             cin >>phiKhamBenhMoiNgay;
-            cout << "Chon loai phong co 3 loai A,B,C";
+            cout << "Chon loai phong co 3 loai A,B,C"<<endl;
             cin >> loaiphong;
+            cout <<"nhap so ngay nam";
+            cin >> soNgayNamVien;
         }
         long TinhTien()
         {
@@ -90,9 +98,9 @@ class BenhNhanNoiTru:public BenhNhan{
         void xuat()
         {
             BenhNhan::xuat();
-            cout <<"Loai phong" <<loaiphong;
-            cout << "So ngay nam vien "<< soNgayNamVien; 
-            cout << "Tong chi phi kham benh "<< TinhTien();
+            cout <<"Loai phong" <<loaiphong << endl;
+            cout << "So ngay nam vien "<< soNgayNamVien<< endl; 
+            cout << "Tong chi phi kham benh "<< TinhTien() << endl;
         
         }
 };
@@ -101,6 +109,8 @@ long BenhNhanNoiTru::B = 900000;
 long BenhNhanNoiTru::C = 600000;
 class DanhSachBenhNhan{
     vector<BenhNhan *> ds;
+    
+  
     private:    
         int soluongBNNoiT=0;// số lượng bệnh nhân Noi trú
         int soluongBNNgoaiT=0;// số lượng bệnh nhân Ngoại trú
@@ -113,7 +123,7 @@ class DanhSachBenhNhan{
         for (int i =0;i<n;i++)
         {
             int chon;
-            cout << "1-Benh Nhan Noi Tru, 2-Benh Nhan Ngoai Tru";
+            cout << "1-Benh Nhan Noi Tru, 2-Benh Nhan Ngoai Tru"<< endl;
             cin >> chon;
             BenhNhan* p=nullptr;
             if(chon==1)
@@ -151,9 +161,11 @@ class DanhSachBenhNhan{
         for (int i=0;i<ds.size();i++)
         {
             sum+=this->ds[i]->TinhTien();
+            
         }
         return sum;
     }
+    
     
     ~DanhSachBenhNhan()
     {
@@ -163,14 +175,14 @@ class DanhSachBenhNhan{
         }
         ds.clear();
     }
-   
+  
 };
 int main()
 {
     DanhSachBenhNhan q1;
     q1.nhapThongtin();
-    cout << "So luong benh nhan noi tru la "<< q1.NoiTru();
-    cout << "So luong benh nhan ngoai tru la "<< q1.NgoaiTru();
+    cout << "So luong benh nhan noi tru la "<< q1.NoiTru()<< endl;
+    cout << "So luong benh nhan ngoai tru la "<< q1.NgoaiTru()<< endl;
     cout << "Tong tien la "<< q1.tinhTongTien();
     
     return 0;
