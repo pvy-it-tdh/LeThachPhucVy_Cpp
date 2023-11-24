@@ -94,6 +94,7 @@ void makeDeposit(Account &acnt)
     cin.ignore();
     acnt.makeDeposit(dollars);
 }
+
 //**************************************************************
 // Definition of function withdraw. This function accepts *
 // a reference to an Account object. The user is prompted for *

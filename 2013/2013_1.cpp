@@ -26,7 +26,7 @@ public:
     }
 
     I operator *(const I& c) {
-        I result(a * c.a + 7 * b * c.b, a * c.b + b * c.a);
+        I result(a * c.a + 7 * b * c.b, a * c.b + b * c.a);// (a+bsqrt(7))*)(c+dsqrt(7))
         return result;
     }
 

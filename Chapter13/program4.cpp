@@ -89,7 +89,8 @@ int main()
     cin >> number; // Get the width
     den->setWidth(number); // Store in den object
     // Calculate the total area of the three rooms.
-    totalArea = kitchen->getArea() + bedroom->getArea() +den->getArea();
+    totalArea = kitchen->getArea() + bedroom->getArea() +
+    den->getArea();
     // Display the total area of the three rooms.
     cout << "The total area of the three rooms is "
     << totalArea << endl;

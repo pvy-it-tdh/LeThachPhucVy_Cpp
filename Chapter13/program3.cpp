@@ -64,10 +64,12 @@ int main()
     Rectangle *kitchen = nullptr; // To point to kitchen dimensions
     Rectangle *bedroom = nullptr; // To point to bedroom dimensions
     Rectangle *den = nullptr; // To point to den dimensions
+    
     // Dynamically allocate the objects.
     kitchen = new Rectangle;
     bedroom = new Rectangle;
     den = new Rectangle;
+    
     // Get the kitchen dimensions.
     cout << "What is the kitchen's length? ";
     cin >> number; // Get the length
@@ -75,6 +77,7 @@ int main()
     cout << "What is the kitchen's width? ";
     cin >> number; // Get the width
     kitchen->setWidth(number); // Store in kitchen object
+    
     // Get the bedroom dimensions.
     cout << "What is the bedroom's length? ";
     cin >> number; // Get the length
@@ -82,6 +85,7 @@ int main()
     cout << "What is the bedroom's width? ";
     cin >> number; // Get the width
     bedroom->setWidth(number); // Store in bedroom object
+    
     // Get the den dimensions.
     cout << "What is the den's length? ";
     cin >> number; // Get the length
@@ -89,12 +93,15 @@ int main()
     cout << "What is the den's width? ";
     cin >> number; // Get the width
     den->setWidth(number); // Store in den object
+    
     // Calculate the total area of the three rooms.
     totalArea = kitchen->getArea() + bedroom->getArea() +
-    den->getArea();
+                                         den->getArea();
+    
     // Display the total area of the three rooms.
     cout << "The total area of the three rooms is "
-    << totalArea << endl;
+         << totalArea << endl;
+    
     // Delete the objects from memory.
     delete kitchen;
     delete bedroom;

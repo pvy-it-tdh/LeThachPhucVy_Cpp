@@ -3,7 +3,7 @@
 using namespace std;
 class Function{
     public:
-        virtual double Value(double x)=0;
+        virtual double(double x) Value=0;
         virtual double Derive(double x)=0;
 };
 class Sin:public Function{
@@ -48,7 +48,7 @@ double DaoHamThuong(Function *f,Function *g, double x)
 {
     if (g!=NULL)
     {// f/g =f'*g-g'*f/g^2
-        return (f->Derive(x)*g->Value(x)-f->Value(x)*g->Derive(x))/(g->Derive(x)*g->Derive(x));
+        return (f->Derive(x)*g->Value(x)-f->Value(x)*g->Derive(x))/(g->Value(x)*g->Value(x));
     }
     return 0;
 }

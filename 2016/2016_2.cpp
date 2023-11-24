@@ -55,6 +55,7 @@ class BenhNhanNoiTru : public BenhNhan {
 private:
     char loaiphong;
     int soNgayNamVien;
+    long chiphikhambenh;
 
 public:
     static long A;
@@ -63,21 +64,23 @@ public:
 
     void nhap() override {
         BenhNhan::nhap();
-        cout << "Nhap loai phong (A/B/C): ";
+        cout << "Nhap loai phong (A/B/C): "<< endl;
         cin >> loaiphong;
-        cout << "Nhap so ngay nam vien: ";
+        cout << "Nhap so ngay nam vien: "<< endl;
         cin >> soNgayNamVien;
+        cout << "Nhap chi phi kham benh"<< endl;
+        cin >> chiphikhambenh;
     }
 
     long TinhTien() override {
         if (this->loaiphong == 'A') {
-            return this->A * this->soNgayNamVien + this->A * this->soNgayNamVien;
+            return this->A * this->soNgayNamVien + this->chiphikhambenh * this->soNgayNamVien;
         }
         else if (this->loaiphong == 'B') {
-            return this->B * this->soNgayNamVien + this->B * this->soNgayNamVien;
+            return this->B * this->soNgayNamVien + this->chiphikhambenh * this->soNgayNamVien;
         }
         else if (this->loaiphong == 'C') {
-            return this->C * this->soNgayNamVien + this->C * this->soNgayNamVien;
+            return this->C * this->soNgayNamVien + this->chiphikhambenh * this->soNgayNamVien;
         }
         else {
             return 0;
@@ -88,6 +91,7 @@ public:
         BenhNhan::xuat(outStream);
         outStream << "Loai phong: " << loaiphong << endl;
         outStream << "So ngay nam vien: " << soNgayNamVien << endl;
+        outStream << "Phi kham benh: " << chiphikhambenh << endl;
         outStream << "Tong chi phi kham benh: " << TinhTien() << endl;
     }
 };

@@ -1,4 +1,5 @@
 #include<iostream>
+using namespace std;
 class PhanSo {
 private:
     int tu, mau;
@@ -13,7 +14,7 @@ public:
         this->tu = tu;
         this->mau = mau;
         if (this->mau == 0) {
-            cout << "Mau khong duoc bang 0\n";
+            cout << "Mau khong duoc bang 0 \n";
             this->tu = 0;
             this->mau = 0;
         }
@@ -44,7 +45,7 @@ public:
         return this->tu / this->mau;
     }
 
-    friend ostream& operator<<(ostream& os, const PhanSo& ps) {
+    friend ostream& operator <<(ostream& os, const PhanSo& ps) {
         os << ps.tu << "/" << ps.mau;
         return os;
     }
